@@ -1,5 +1,6 @@
 library(Seurat)
 library(sctransform)
+library(scDblFinder)
 library(dplyr)
 library(ggplot2)
 library(Matrix)
@@ -38,4 +39,5 @@ z_4dpf_woDoublet <- RunPCA(z_4dpf_woDoublet)
 
 z_4dpf_woDoublet_process <- FindNeighbors(object = z_4dpf_woDoublet, dims = 1:30, reduction = "pca", k.param = 30)
 z_4dpf_woDoublet_process <- FindClusters(object=z_4dpf_woDoublet_process, resolution = 0.3)
+
 z_4dpf_woDoublet_process <- RunUMAP(object=z_4dpf_woDoublet_process ,dims = 1:30, n.neighbors = 30)
