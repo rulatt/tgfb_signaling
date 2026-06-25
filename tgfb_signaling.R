@@ -58,8 +58,8 @@ z_4dpf_woDoublet_process <- RunUMAP(object=z_4dpf_woDoublet_process ,dims = 1:30
 
 ### tgfb dataset ###
 
-WT_tgfb = create_seurat_mito_filtering("output_WT_tgfb_filtered_SEURAT.h5")
-mut_tgfb = create_seurat_mito_filtering("output_mut_tgfb_filtered_SEURAT.h5")
+WT_tgfb = create_seurat_obj("output_WT_tgfb_filtered_SEURAT.h5")
+mut_tgfb = create_seurat_obj("output_mut_tgfb_filtered_SEURAT.h5")
 
 WT_tgfb_apply = apply_transform_(WT_tgfb)
 mut_tgfb_apply = apply_transform(mut_tgfb)
