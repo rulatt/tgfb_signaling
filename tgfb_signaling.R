@@ -16,8 +16,7 @@ create_seurat_obj = function(file_h5) {
   data[["percent.ribo.raw"]] <- PercentageFeatureSet(data, pattern = "^rp[sl][[:digit:]]", assay="RNA")  
   data[["percent.mt.raw"]] <-PercentageFeatureSet(data, pattern = "^mt-", assay="RNA")
   
-  data_filter <- subset(data, subset = nFeature_RNA > 500 & nFeature_RNA < 7000  & nCount_RNA > 500 & 
-                          nCount_RNA < 25000 & percent.mt.raw < 15)
+  data_filter <- subset(data, subset = nFeature_RNA > 500  nCount_RNA > 500 & percent.mt.raw < 15)
   
   return(data_filter)
   
